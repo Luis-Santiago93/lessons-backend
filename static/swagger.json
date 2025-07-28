@@ -1,0 +1,687 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "ES7-WebServices",
+        "version": "1.0.1",
+        "title": "ES7 WebService"
+    },
+    "basePath": "/api",
+    "paths": {
+        "/v1.0/EscuelaSabatica": {
+            "get": {
+                "tags": ["Escuela Sabatica"],
+                "summary": "Obtener todos las Escuelas Sabaticas",
+                "description": "",
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "language",
+                    "in": "query",
+                    "description": "Lenguaje de Escuela Sabatica",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Operacion exitosa"
+                    }
+                }
+            }
+        },
+        "/v1.0/EscuelaSabatica/config": {
+            "get": {
+                "tags": ["Escuela Sabatica"],
+                "summary": "Obtener Escuela Sabatica publicada",
+                "description": "",
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "language",
+                    "in": "query",
+                    "description": "Lenguaje de Escuela Sabatica",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Operacion exitosa"
+                    }
+                }
+            }
+        },
+        "/v1.0/EscuelaSabatica/{id}/": {
+            "get": {
+                "tags": ["Escuela Sabatica"],
+                "summary": "Encontrar una Escuela Sabatica por su Identificador",
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "id",
+                    "in": "path",
+                    "description": "Identificador",
+                    "required": true,
+                    "type": "integer"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Operacion exitosa"
+                    },
+                    "404": {
+                        "description": "Contacto no encotrado"
+                    }
+                }
+            }
+        },
+        "/v1.0/EscuelaSabatica/create": {
+            "post": {
+                "tags": ["Escuela Sabatica"],
+                "summary": "Crear una Escuela Sabatica",
+                "description": "",
+                "consumes": ["application/json"],
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "Escuela Sabatica",
+                    "in": "body",
+                    "description": "Escuela Sabatica a crear",
+                    "required": true,
+                    "schema": {
+                            "type": "object",
+                            "properties": {
+                                "idEs": {
+                                    "type": "integer"
+                                },
+                                "title": {
+                                    "type": "string"
+                                },
+                                "color": {
+                                    "type": "string"
+                                },
+                                "quarterText": {
+                                    "type": "string"
+                                },
+                                "quarter": {
+                                    "type": "string"
+                                },
+                                "latestVersionName": {
+                                    "type": "string"
+                                },
+                                "latestVersionCode": {
+                                    "type": "integer"
+                                },
+                                "forceUpdate": {
+                                    "type": "integer"
+                                },
+                                "googleUpdate": {
+                                    "type": "integer"
+                                },
+                                "flexibleUpdate": {
+                                    "type": "integer"
+                                },
+                                "helpVideos": {
+                                    "type": "string"
+                                },
+                                "mission": {
+                                    "type": "string"
+                                },
+                                "language": {
+                                    "type": "string"
+                                },
+                                "egwHasAlert": {
+                                    "type": "integer"
+                                },
+                                "appHasAlert": {
+                                    "type": "integer"
+                                },
+                                "quarterNumber": {
+                                    "type": "integer"
+                                },
+                                "published": {
+                                    "type": "integer"
+                                },
+                                "frontPage": {
+                                    "type": "string"
+                                },
+                                "year": {
+                                    "type": "integer"
+                                }
+                            }
+                        
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Operacion exitosa"
+                    }
+                }
+            }
+        },
+        "/v1.0/EscuelaSabatica/inactive": {
+            "patch": {
+                "tags": ["Escuela Sabatica"],
+                "summary": "Deshabilitar una Escuela Sabatica",
+                "description": "",
+                "consumes": ["application/json"],
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "Escuela Sabatica",
+                    "in": "body",
+                    "description": "Escuela Sabatica a Deshabilitar",
+                    "required": true,
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "idEs": {
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Operacion exitosa"
+                    }
+                }
+            }
+        },
+        "/v1.0/EscuelaSabatica/published": {
+            "patch": {
+                "tags": ["Escuela Sabatica"],
+                "summary": "Publicar una Escuela Sabatica",
+                "description": "",
+                "consumes": ["application/json"],
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "Escuela Sabatica",
+                    "in": "body",
+                    "description": "Escuela Sabatica a Publicar",
+                    "required": true,
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "idEs": {
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Operacion exitosa"
+                    }
+                }
+            }
+        },
+        "/v1.0/EscuelaSabatica/update": {
+            "put": {
+                "tags": ["Escuela Sabatica"],
+                "summary": "Editar una Escuela Sabatica",
+                "description": "",
+                "consumes": ["application/json"],
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "Escuela Sabatica",
+                    "in": "body",
+                    "description": "Escuela Sabatica a editar",
+                    "required": true,
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "idEs": {
+                                "type": "integer"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "color": {
+                                "type": "string"
+                            },
+                            "quarterText": {
+                                "type": "string"
+                            },
+                            "quarter": {
+                                "type": "string"
+                            },
+                            "latestVersionName": {
+                                "type": "string"
+                            },
+                            "latestVersionCode": {
+                                "type": "integer"
+                            },
+                            "forceUpdate": {
+                                "type": "integer"
+                            },
+                            "googleUpdate": {
+                                "type": "integer"
+                            },
+                            "flexibleUpdate": {
+                                "type": "integer"
+                            },
+                            "helpVideos": {
+                                "type": "string"
+                            },
+                            "mission": {
+                                "type": "string"
+                            },
+                            "language": {
+                                "type": "string"
+                            },
+                            "egwHasAlert": {
+                                "type": "integer"
+                            },
+                            "appHasAlert": {
+                                "type": "integer"
+                            },
+                            "quarterNumber": {
+                                "type": "integer"
+                            },
+                            "published": {
+                                "type": "integer"
+                            },
+                            "frontPage": {
+                                    "type": "string"
+                                },
+                            "year": {
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Operacion exitosa"
+                    }
+                }
+            }
+        },
+        "/v1.0/Contenido": {
+            "get": {
+                "tags": ["Contenido de Escuela Sabatica"],
+                "summary": "Contenido de una Escuela Sabatica",
+                "description": "",
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "es7",
+                    "in": "query",
+                    "description": "Escuela Sabatica",
+                    "required": true,
+                    "type": "integer"
+                },
+                {
+                    "name": "tipo",
+                    "in": "query",
+                    "description": "Tipo de Contenido",
+                    "required": true,
+                    "type": "integer"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Operacion exitosa"
+                    }
+                }
+            }
+        },
+        "/v1.0/Contenido/lessons": {
+            "get": {
+                "tags": ["Contenido de Escuela Sabatica"],
+                "summary": "Contenido de una Escuela Sabatica por Leccion",
+                "description": "",
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "es7",
+                    "in": "query",
+                    "description": "Escuela Sabatica",
+                    "required": true,
+                    "type": "integer"
+                },
+                {
+                    "name": "lesson",
+                    "in": "query",
+                    "description": "Leccion",
+                    "required": true,
+                    "type": "integer"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Operacion exitosa"
+                    }
+                }
+            }
+        },
+        "/v1.0/Contenido/egw": {
+            "get": {
+                "tags": ["Contenido de Escuela Sabatica"],
+                "summary": "Contenido Egw de una Escuela Sabatica por Leccion",
+                "description": "",
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "es7",
+                    "in": "query",
+                    "description": "Escuela Sabatica",
+                    "required": true,
+                    "type": "integer"
+                },
+                {
+                    "name": "lesson",
+                    "in": "query",
+                    "description": "Leccion",
+                    "required": true,
+                    "type": "integer"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Operacion exitosa"
+                    }
+                }
+            }
+        },
+        "/v1.0/Contenido/{id}/": {
+            "get": {
+                "tags": ["Contenido de Escuela Sabatica"],
+                "summary": "Encontrar un contenido por su Identificador",
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "id",
+                    "in": "path",
+                    "description": "Identificador",
+                    "required": true,
+                    "type": "integer"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Operacion exitosa"
+                    },
+                    "404": {
+                        "description": "Contenido no encontrado"
+                    }
+                }
+            }
+        },
+        "/v1.0/Contenido/create": {
+            "post": {
+                "tags": ["Contenido de Escuela Sabatica"],
+                "summary": "Crear Contenido de Escuela Sabatica",
+                "description": "",
+                "consumes": ["application/json"],
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "Contenido de Escuela Sabatica",
+                    "in": "body",
+                    "description": "Contenido de Escuela Sabatica a crear",
+                    "required": true,
+                    "schema": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "idEs": {
+                                    "type": "integer"
+                                },
+                                "title": {
+                                    "type": "string"
+                                },
+                                "verse": {
+                                    "type": "string"
+                                },
+                                "remoteColor": {
+                                    "type": "string"
+                                },
+                                "egw": {
+                                    "type": "integer"
+                                },
+                                "date": {
+                                    "type": "string"
+                                },
+                                "versionCode": {
+                                    "type": "integer"
+                                },
+                                "lessonNumber": {
+                                    "type": "integer"
+                                }
+                            }
+                        
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Operacion exitosa"
+                    }
+                }
+            }
+        },
+        "/v1.0/Contenido/inactive": {
+            "patch": {
+                "tags": ["Contenido de Escuela Sabatica"],
+                "summary": "Deshabilitar un Contenido de Escuela Sabatica",
+                "description": "",
+                "consumes": ["application/json"],
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "Contenido de Escuela Sabatica",
+                    "in": "body",
+                    "description": "Contenido de Escuela Sabatica a Deshabilitar",
+                    "required": true,
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Operacion exitosa"
+                    }
+                }
+            }
+        },
+        "/v1.0/Contenido/update": {
+            "put": {
+                "tags": ["Contenido de Escuela Sabatica"],
+                "summary": "Editar un Contenido de Escuela Sabatica",
+                "description": "",
+                "consumes": ["application/json"],
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "Contenido de Escuela Sabatica",
+                    "in": "body",
+                    "description": "Contenido de Escuela Sabatica a editar",
+                    "required": true,
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            },
+                            "idEs": {
+                                "type": "integer"
+                            },
+                            "title": {
+                                "type": "string"
+                            },
+                            "verse": {
+                                "type": "string"
+                            },
+                            "remoteColor": {
+                                "type": "string"
+                            },
+                            "egw": {
+                                "type": "integer"
+                            },
+                            "date": {
+                                "type": "string"
+                            },
+                            "versionCode": {
+                                "type": "integer"
+                            },
+                            "lessonNumber": {
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Operacion exitosa"
+                    }
+                }
+            }
+        },
+        "/v1.0/LeccionDiaria": {
+            "get": {
+                "tags": ["Lecciones Diarias"],
+                "summary": "Lecciones Diarias de una Escuela Sabatica",
+                "description": "",
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "contenido",
+                    "in": "query",
+                    "description": " Contenido de Escuela Sabatica",
+                    "required": true,
+                    "type": "integer"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Operacion exitosa"
+                    }
+                }
+            }
+        },
+        "/v1.0/LeccionDiaria/{id}/": {
+            "get": {
+                "tags": ["Lecciones Diarias"],
+                "summary": "Encontrar un leccion por su Identificador",
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "id",
+                    "in": "path",
+                    "description": "Identificador",
+                    "required": true,
+                    "type": "integer"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Operacion exitosa"
+                    },
+                    "404": {
+                        "description": "Leccion no encontrado"
+                    }
+                }
+            }
+        },
+        "/v1.0/LeccionDiaria/create": {
+            "post": {
+                "tags": ["Lecciones Diarias"],
+                "summary": "Crear una Leccion",
+                "description": "",
+                "consumes": ["application/json"],
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "Leccion Diaria",
+                    "in": "body",
+                    "description": "Leccion Diaria a crear",
+                    "required": true,
+                    "schema": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "idLesson": {
+                                    "type": "integer"
+                                },
+                                "idDay": {
+                                    "type": "integer"
+                                },
+                                "dayTitle": {
+                                    "type": "string"
+                                },
+                                "date": {
+                                    "type": "string"
+                                },
+                                "lessonText": {
+                                    "type": "string"
+                                }
+                            }
+                        
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Operacion exitosa"
+                    }
+                }
+            }
+        },
+        "/v1.0/LeccionDiaria/inactive": {
+            "patch": {
+                "tags": ["Lecciones Diarias"],
+                "summary": "Deshabilitar una leccion",
+                "description": "",
+                "consumes": ["application/json"],
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "Leccion Diaria",
+                    "in": "body",
+                    "description": "Leccion Diaria a Deshabilitar",
+                    "required": true,
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Operacion exitosa"
+                    }
+                }
+            }
+        },
+        "/v1.0/LeccionDiaria/update": {
+            "put": {
+                "tags": ["Lecciones Diarias"],
+                "summary": "Editar una leccion",
+                "description": "",
+                "consumes": ["application/json"],
+                "produces": ["application/json"],
+                "parameters": [{
+                    "name": "Leccion Diaria",
+                    "in": "body",
+                    "description": "Leccion Diaria a editar",
+                    "required": true,
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            },
+                            "idLesson": {
+                                "type": "integer"
+                            },
+                            "idDay": {
+                                "type": "integer"
+                            },
+                            "dayTitle": {
+                                "type": "string"
+                            },
+                            "date": {
+                                "type": "string"
+                            },
+                            "lessonText": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Operacion exitosa"
+                    }
+                }
+            }
+        }
+    }
+}
