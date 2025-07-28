@@ -21,8 +21,8 @@ Este proyecto es el **backend en Python** para la aplicación **Dot7**, diseñad
 ### 1. 🔁 Clona el repositorio
 
 ```bash
-git clone https://github.com/tu_usuario/ES7_BACKEND.git
-cd ES7_BACKEND
+git clone https://github.com/Luis-Santiago93/lessons-backend.git
+cd lessons-backend
 ```
 
 ### 2. 🐍 Crea y activa el entorno virtual
