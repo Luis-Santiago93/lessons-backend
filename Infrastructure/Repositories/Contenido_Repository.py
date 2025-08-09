@@ -15,13 +15,6 @@ def get_json(o):
         }
 
 def get_json_lesson(o):
-    def convert_id_english(x):
-        if x <10:
-            new_id=str('70')+str(x)
-        else:
-            new_id=str('7')+str(x)
-        return int(new_id)
-    
     list_lesson = []
 
     for content in o.leccion_diaria:
@@ -35,11 +28,11 @@ def get_json_lesson(o):
                 'date':i.Fecha,
                 'lessonText':i.TextoLeccion,
                 'idDay':i.NumeroDia,
-                'id':int(str(i.contenido.NumeroLeccion)+str(i.NumeroDia)),
+                'id':i.LeccionDiariaID,
                 'idLesson':i.contenido.NumeroLeccion
             }
     
-    return {'id': convert_id_english(o.NumeroLeccion) if o.escuela_sabatica.Lenguaje=='en' else o.NumeroLeccion,
+    return {'id': o.ContenidoID,
             'idEs': o.EscuelaSabaticaID,
             'title': o.Titulo,
             'color': o.Color,
@@ -70,12 +63,12 @@ def get_json_egw(o):
                 'day':'-',
                 'content':i.TextoLeccion,
                 'idDay':i.NumeroDia,
-                'id':int(str(i.contenido.NumeroLeccion)+str(i.NumeroDia)),
-                'idLesson':i.contenido.NumeroLeccion,
+                'id':i.LeccionDiariaID,
+                'idLesson':i.contenido.ContenidoID,
                 'quarterCode': trimestre
             }
     
-    return {'id': o.NumeroLeccion,
+    return {'id': o.ContenidoID,
             'idEs': o.EscuelaSabaticaID,
             'title': o.Titulo,
             'color': o.Color,
